@@ -1,0 +1,65 @@
+### Dos of UIC(U/I Component)
+
+===============================
+## UICButton
+-- props
+props = {
+    size?: 'sm' | 'md' | 'lg'
+    bg?: string
+    color?: string
+    text_color?: string
+    disabled?: boolean
+}
+-- slots
+#prepend-icon
+#append-icon
+
+===============================
+## UICDialog
+-- props
+props = {
+    modelValue: boolean
+    dialogTitle: string
+}
+-- slots
+#body
+#footer
+
+===============================
+## UICInput
+-- props
+props = {
+    size?: 'sm' | 'md' | 'lg'
+    disabled?: boolean
+    placeholder: string
+    modelValue: string
+    type?: 'input types'
+}
+-- slots
+#prepend-icon
+#append-icon
+
+-- emits
+@click-append-icon=""
+@click-prepend-icon=""
+
+===============================
+## UICTable
+-- props
+props = {
+    columns: [
+        {
+            name: string,
+            key: string
+        }
+    ]
+    rows: any[],
+}
+-- slots
+#actions
+
+===============================
+## UICTopBar
+-- slots
+#left-side
+#right-side
