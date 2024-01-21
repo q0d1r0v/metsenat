@@ -2,7 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
+/* import fonts */
+@font-face {
+  font-family: "SF-Pro-Text-Black";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Black.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-BlackItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-BlackItalic.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-Bold";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-BoldItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-BoldItalic.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-Heavy";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Heavy.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-HeavyItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-HeavyItalic.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-Light";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Light.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-LightItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-LightItalic.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-Medium";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Medium.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-MediumItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-MediumItalic.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-Regular";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Regular.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-RegularItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-RegularItalic.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-Semibold";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Semibold.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-SemiboldItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-SemiboldItalic.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-Thin";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Thin.otf") format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-ThinItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-ThinItalic.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-Ultralight";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-Ultralight.otf")
+    format("truetype");
+}
+@font-face {
+  font-family: "SF-Pro-Text-UltralightItalic";
+  src: url("./assets/fonts/SF-Pro-Text/SF-Pro-Text-UltralightItalic.otf")
+    format("truetype");
+}
+
 body {
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: SF-Pro-Text-Regular;
 }

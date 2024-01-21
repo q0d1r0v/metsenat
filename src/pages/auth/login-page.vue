@@ -25,17 +25,22 @@ const form = ref<IFormType>({
 })
 const checked = ref<string>('')
 const theme = ref<'light' | 'dark'>('light')
+const waiting = ref<boolean>(false)
 
 async function sendForm() {
     try {
+        waiting.value = true
         const { data } = await http.post("/auth/login/", {
             username: form.value.username,
             password: form.value.password
         })
         localStorage.setItem('access_token', data.access)
         router.push('/')
-    } catch (err) {
+    } catch (err: any) {
         console.log(err)
+        alert(err?.data?.message || "Kirishda xatolik yuz berdi!")
+    } finally {
+        waiting.value = false
     }
 }
 
@@ -65,8 +70,8 @@ async function sendForm() {
                     </div>
 
                     <div class="mt-5">
-                        <UICButton color="primary" size="lg" :disabled="!checked || !form.username || !form.password"
-                            @click="sendForm">
+                        <UICButton color="primary" size="lg"
+                            :disabled="!checked || !form.username || !form.password || waiting" @click="sendForm">
                             Kirish
                         </UICButton>
                     </div>

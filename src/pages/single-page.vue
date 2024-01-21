@@ -1,0 +1,3 @@
+<template>
+    Single page
+</template>

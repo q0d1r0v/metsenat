@@ -1,0 +1,3 @@
+<template>
+    Students page
+</template>

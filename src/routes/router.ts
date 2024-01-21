@@ -6,8 +6,11 @@ import DefaultLayout from "../layouts/default.vue";
 import AuthLayout from "../layouts/auth.vue";
 
 // pages
-import IndexPage from "../pages/index.vue";
 import LoginPage from "../pages/auth/login-page.vue";
+import IndexPage from "../pages/index.vue";
+import SponsorsPage from "../pages/sponsors-page.vue";
+import StudentsPage from "../pages/students-page.vue";
+import SinglePage from "../pages/single-page.vue";
 
 // export router
 export const router = createRouter({
@@ -36,12 +39,36 @@ export const router = createRouter({
             auth: true,
           },
         },
+        {
+          name: "Sponsors Page",
+          path: "/sponsors",
+          component: SponsorsPage,
+          meta: {
+            auth: true,
+          },
+        },
+        {
+          name: "Students Page",
+          path: "/students",
+          component: StudentsPage,
+          meta: {
+            auth: true,
+          },
+        },
+        {
+          name: "Single Page",
+          path: "/single",
+          component: SinglePage,
+          meta: {
+            auth: true,
+          },
+        },
       ],
     },
   ],
 });
 
-// auth middleware
+// auth middlewares
 router.beforeEach((to, from, next) => {
   if (to.meta.auth == true && !localStorage.getItem("access_token")) {
     next("/auth/login");
