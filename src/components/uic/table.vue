@@ -11,26 +11,6 @@ const props = defineProps<IPropsType>()
 </script>
 
 <template>
-    <!-- <div>
-        <table class="w-full bg-green-200">
-            <tr class="bg-red-300 w-full">
-                <th class="text-xs header" v-for="(head, index) of props.columns" :key="index">
-                    {{ head.name }}
-                </th>
-            </tr>
-            <tr v-for="( body, index ) of  props.rows " :key="index" class="text-center"
-                style="border: 12px solid #F5F5F7;">
-                <td class="bg-[#fff] px-4 py-6 text-sm" v-for="( cdata, index ) of  props.columns" :key="index">
-                    {{ body[cdata.key] }}
-                </td>
-                <td class="bg-[#fff] px-4 py-6 text-sm" v-for="( cdata, index ) of  props.columns" :key="index"
-                    v-show="cdata.key === 'actions'">
-                    <slot name="actions" v-bind="body" />
-                </td>
-            </tr>
-        </table>
-    </div> -->
-
     <div>
         <div class="parent-table">
             <div class="head">
