@@ -1,29 +1,21 @@
 <script setup lang="ts">
 // imports
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { IndexStore } from "./../store/index"
+import { SponsorStore } from "./../store/sponsors"
+import { router } from "../routes/router";
+
+// ui components
 import UICTable from "../components/uic/table.vue"
+import UICDialog from "../components/uic/dialog.vue"
+import { http } from "../utils/axios";
+
+// store
+const index_store = IndexStore()
+const sponsor_store = SponsorStore()
 
 // data
-const tdata = ref([
-    {
-        id: 1,
-        full_name: "full name 1",
-        phone_number: '7887878787',
-        sum_of_sponsor: "30 000 000",
-        cost: "10 000",
-        date: "12.12.2020",
-        status: "cancel"
-    },
-    {
-        id: 2,
-        full_name: "full name 2",
-        phone_number: '7887878789',
-        sum_of_sponsor: "10 000 000",
-        cost: "20 000",
-        date: "11.11.2021",
-        status: "new"
-    }
-])
+const sponsors = ref<any[]>([])
 const headers = [
     {
         name: "ID",
@@ -35,23 +27,23 @@ const headers = [
     },
     {
         name: "Telefon raqam",
-        key: "phone_number"
+        key: "phone"
     },
     {
         name: "Homiylik summasi",
-        key: "sum_of_sponsor"
+        key: "sum"
     },
     {
-        name: "Harajat",
-        key: "cost"
+        name: "Sariflangan summa",
+        key: "spent"
     },
     {
         name: "Sana",
-        key: "date"
+        key: "created_at"
     },
     {
         name: "Holat",
-        key: "status"
+        key: "get_status_display"
     },
     {
         name: "Amallar",
@@ -59,15 +51,59 @@ const headers = [
     },
 ]
 
+// methods
+function goToPersonalPage(data: any) {
+    sponsor_store.sponsor_data = data
+    router.push('/single')
+}
+async function getSponsors() {
+    try {
+        const { data } = await http.get("/sponsor-list/")
+        data.results.map((sdata) => {
+            sdata.created_at = sdata.created_at.split(":")[0].split("T")[0]
+            sdata.sum = parseInt(sdata.sum).toLocaleString().split(",").join(' ') + " UZS"
+
+            return sdata
+        })
+        sponsors.value = data.results
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+// mounted
+onMounted(() => {
+    getSponsors()
+})
 </script>
 
 <template>
     <div>
-        <UICTable :rows="tdata" :columns="headers">
+        <UICDialog v-model="index_store.sponsors_filter_dialog_model_vale" dialog-title="Homiylar Filter">
+            <template #body>
+                <div>
+                    This is Body of Sponsors page
+                </div>
+            </template>
+
+            <template #footer>
+                <div>
+                    This is Footer of Sponsors page
+                </div>
+            </template>
+        </UICDialog>
+        <UICTable :rows="sponsors" :columns="headers">
             <template #actions="props">
                 <div>
-                    pencil
+                    <img alt="#eye" src="../assets/eye.svg" class="w-[24px] cursor-pointer"
+                        @click="goToPersonalPage(props)" />
                 </div>
+            </template>
+
+            <template #get_status_display="props">
+                <span>
+                    {{ props.get_status_display }}
+                </span>
             </template>
         </UICTable>
     </div>

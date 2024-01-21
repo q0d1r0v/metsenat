@@ -50,7 +50,7 @@ async function sendForm() {
     <div class="w-full h-full bg-[#F5F5F7] flex items-center justify-center">
         <div>
             <div class="mb-[48px] flex items-center justify-center">
-                <img alt="#metsenat_logo" src="../../assets/metsenat-logo.png" class="w-[314px]" />
+                <img alt="#metsenat_logo" src="../../assets/metsenat-logo.svg" class="w-[314px]" />
             </div>
             <div class="w-[379px] h-[456px] p-[32px] bg-[#fff] rounded-xl">
                 <span class="text-[#28293D] text-2xl font-bold">

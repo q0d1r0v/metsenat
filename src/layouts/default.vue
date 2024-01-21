@@ -23,7 +23,7 @@ function goToOtherPage(path: string) {
     <div class="w-full h-screen">
         <top-bar>
             <template #left-side>
-                <img alt="#metsenat_logo" src="../assets/metsenat-dashboard-logo.png" class="w-[172px] cursor-pointer"
+                <img alt="#metsenat_logo" src="../assets/metsenat-dashboard-logo.svg" class="w-[172px] cursor-pointer"
                     @click="goToOtherPage('/')" />
             </template>
 
@@ -36,10 +36,10 @@ function goToOtherPage(path: string) {
                         </span>
 
                         <span class="bg-[#00AE69] px-1 py-1 rounded-md ml-2">
-                            <img alt="#avatar_icon" src="../assets/avatar-icon.png" class="w-[24px]" />
+                            <img alt="#avatar_icon" src="../assets/avatar-icon.svg" class="w-[24px]" />
                         </span>
                     </div>
-                    <img src="../assets/log-out.png" class="w-[32px] cursor-pointer select-none" @click="logOut" />
+                    <img src="../assets/log-out.svg" class="w-[32px] cursor-pointer select-none" @click="logOut" />
                 </div>
             </template>
         </top-bar>

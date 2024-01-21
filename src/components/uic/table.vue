@@ -54,6 +54,7 @@ const props = defineProps<IPropsType>()
     .body {
         width: 100%;
         min-height: 40px;
+        max-height: 80px;
         display: flex;
         background: #fff;
         border-radius: 8px;

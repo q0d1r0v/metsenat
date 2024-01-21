@@ -35,6 +35,7 @@ export const router = createRouter({
           name: "Index Page",
           path: "/",
           component: IndexPage,
+          props: true,
           meta: {
             auth: true,
           },
@@ -43,6 +44,7 @@ export const router = createRouter({
           name: "Sponsors Page",
           path: "/sponsors",
           component: SponsorsPage,
+          props: true,
           meta: {
             auth: true,
           },
@@ -51,6 +53,7 @@ export const router = createRouter({
           name: "Students Page",
           path: "/students",
           component: StudentsPage,
+          props: true,
           meta: {
             auth: true,
           },
@@ -59,6 +62,7 @@ export const router = createRouter({
           name: "Single Page",
           path: "/single",
           component: SinglePage,
+          props: true,
           meta: {
             auth: true,
           },

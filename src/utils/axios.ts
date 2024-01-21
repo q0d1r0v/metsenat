@@ -23,7 +23,7 @@ http.interceptors.request.use((request: any) => {
 
   // set token
   if (access_token) {
-    request.headers.Authorization = `Basic ${access_token}`;
+    request.headers.Authorization = `Bearer ${access_token}`;
   }
 
   return request;

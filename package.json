@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --port 3000",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
@@ -12,6 +12,7 @@
     "@iconify/vue": "^4.1.1",
     "@unhead/vue": "^1.8.10",
     "axios": "^1.6.5",
+    "pinia": "^2.1.7",
     "sass": "^1.70.0",
     "vue": "^3.3.11",
     "vue-recaptcha": "^3.0.0-alpha.6",
