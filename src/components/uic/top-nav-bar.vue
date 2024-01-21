@@ -47,6 +47,8 @@ function showFilterDialog() {
         index_store.updateSponsorsDialogModelValue()
     } else if (route.path === "/students") {
         index_store.updateStudentsDialogModelValue()
+    } else if (route.path === "/") {
+        index_store.updateDashboardDialogModelValue()
     }
 }
 function getBack() {

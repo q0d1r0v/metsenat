@@ -2,6 +2,8 @@
 // imports
 import { onMounted, ref } from "vue"
 import { http } from "../utils/axios";
+import { IndexStore } from "../store/index"
+import UICDialog from "../components/uic/dialog.vue"
 
 // types
 interface IDashboardDataTypes {
@@ -9,6 +11,9 @@ interface IDashboardDataTypes {
     total_need: string
     total_paid: string
 }
+
+// store
+const index_store = IndexStore()
 
 // data
 const dashboard_data = ref<IDashboardDataTypes>({
@@ -78,6 +83,19 @@ onMounted(() => {
     <div class="mt-[28px]">
         This area of Chart
     </div>
+    <UICDialog v-model="index_store.dashboard_filter_dialog_model_vale" dialog-title="Dashboard Filter">
+        <template #body>
+            <div>
+                This is Body of Dashboard page
+            </div>
+        </template>
+
+        <template #footer>
+            <div>
+                This is Footer of Dashboard page
+            </div>
+        </template>
+    </UICDialog>
 </template>
 
 <style scoped lang="scss"></style>
